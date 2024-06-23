@@ -3,7 +3,7 @@ let characCount = document.getElementById("charac-count");
 let wordCount = document.getElementById("word-count");
 
 inputTextArea.addEventListener("input", () => {
- characCount.textContent = inputTextArea.value.replace(/\s/g, '').length;
+  characCount.textContent = inputTextArea.value.replace(/[^a-zA-Z]/g, '').length;
   let txt = inputTextArea.value.trim();
   wordCount.textContent = txt.split(/\s+/).filter((item) => item).length;
 });
